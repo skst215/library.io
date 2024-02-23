@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangsit University Library</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat Interface</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome icons -->
+
+<style>body {
+    background-color: #EAEBEF;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    position: relative;
+    align-content: left;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: skyblue;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 20px;
+}
+.hidden {
+    display: none;
+}
+
+header h1 {
+    color: #EC2071;
+    margin: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: skyblue;
+}
+
+.search-section {
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: #fff; /* Adjust background color if needed */
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input[type="text"] {
+    padding: 8px;
+    width: 70%;
+}
+
+.search-bar span {
+    font-size: 12px;
+}
+
+.faq-container {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+
+.faq-container .faq-box {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    overflow: hidden;
+}
+
+.faq-container .faq-box input  {
+    appearance: none;
+}
+
+.faq-container .faq-box label::after  {
+    content: '+';
+    top: 9px;
+    position: absolute;
+    right: 30px;
+    font-size: 2em;
+    transition: transform 1s;
+}
+
+.faq-container .faq-box input:checked ~ label::after{
+    content: '-';
+    font-size: 3em;
+    top: 1px;
+    position: absolute;
+}
+.faq-container .faq-box input:checked ~ faq-box::after{
+    border-radius: 0px;
+}
+
+.faq-box h3 {
+    margin-top: 0;
+}
+
+.faq-container .faq-box .content{
+    max-height: 0;
+    transition: 1s;
+    overflow: hidden;
+}
+
+.faq-container .faq-box input:checked~ .content{
+    max-height: 100vh;
+}
+
+
+.faq-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 0 0 45%; /* This sets the flex basis to 45% */
+    margin-right: 20px; /* Add margin between columns */
+}
+
+.column1 {
+    flex: 0 0 45%; /* This sets the flex basis to 45% */
+    margin-right: 20px; /* Add margin between columns */
+}
+
+
+.faq-box h3 {
+    margin-top: 0;
+}
+
+footer {
+    font-size: 10px;
+    background-color: #333; /* Adjust background color as needed */
+    color: #fff; /* Text color */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-left p,
+.footer-right p {
+    margin: 0;
+}
+
+@media(max-width: 100px){
+   
+   .column1{}
+
+   }
+   body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+        .content {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        #chat-container {
+            max-height: 300px; /* Adjust as needed */
+            overflow-y: auto;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .message {
+            margin-bottom: 10px;
+            padding: 5px 10px;
+            border-radius: 8px;
+            max-width: 70%;
+            word-wrap: break-word;
+            display: flex;
+            align-items: center;
+        }
+        .user-icon {
+            color: #c5e1f9; /* Sky blue for user */
+            margin-right: 10px;
+        }
+        .answer-icon {
+            color: #a3d8f4; /* Lighter sky blue for answer */
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+   
+</style>
+<body>
+    <header>
+        <h1>Rangsit University Library</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Library</a></li>
+                <li><a href="#">Setting</a></li>
+                <li><a href="#">Green Library</a></li>
+                <li><a href="#">E-Resources</a></li>
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Log in</a></li>
+            </ul>
+        </nav>
+    </header>
+<head>
+   
+        
+</head>
+<body>
+    
+    <div class="content">
+        <div id="chat-container"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "@google/generative-ai": "https://esm.run/@google/generative-ai"
+            }
+        }
+    </script>
+    
+    <script type="module">
+        import { GoogleGenerativeAI } from "@google/generative-ai";
+
+        const API_KEY = "AIzaSyCbq4w1GfU377kjOXvu8h48Sb_wCC2MliI";
+        const genAI = new GoogleGenerativeAI(API_KEY);
+            
+
+        const chatContainer = document.getElementById("chat-container");
+        const userInput = document.getElementById("user-input");
+
+        async function initChat() {
+            const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+            const chat = model.startChat({ history: [
+                {
+                    role: "user",
+                    parts: "You are Sam, a friendly assistant working in the Rangsit University Library. Your job is to answer the user's questions about the library. The location of the library is :52/347 Muang-Ake, Phaholyothin Road, Lak-Hok, Muang, Pathumthani 12000 Thailand. The history of the library is : Rangsit University attaches great importance to the library. Therefore, the university has built a library building.The library began construction on December 23, 1987, which has an area of 9,300 square meters that divides the area about 1,000 square meters for other departments on the first floor and another 8,000 square meters for the library which the capacity of this room can hold a maximum of 2,000 people and can contain four millions of books. The library was completed in September 1989. This library has a total budget of approximately 37 million baht. The location of library is Building 7. This makes it can provide information resources, and users can quickly and conveniently access information.The library building was officially opened on November 9, 1989, by Mr. Tawich Klinprathum, Minister of University Affairs at that time.In the year 1987, the university approved the library as an institution with an equivalent status to the faculty. By name \"Office of The Library.\" The university has appointed a person to be the director who graduated master's degree in the Faculty of Library Science in April 1987. Due to the service has expanded widely, with the introduction of information technology in operations, therefore, requesting to use the new name in Thai and English language as “Rangsit University Library and Information Center” which has been approved in the years 1995-2002. After that, returning to using the original name “Rangsit University Library.\".  The Library is an academic supporting unit which are divided into 5 departments as follows   1. Technical Department   2. Services Department   3. Development Department   4. Archives Department   5. Office of the Secretary. There are a total of 23 staff working at the library in different departments. The opening hours of the library are :  During the semesters, open from Monday - Friday Open 8.30 am - 9.00 pm and on  Saturday-Sunday Open from 9.00 am - 17.00 pm , It is closed during Public holidays. During Summer, it is open from Monday - Friday  08.30 a.m. - 07.00 p.m. and closed on  Saturday-Sunday, It is closed during Public holidays. The Library rules are  1. Enter the library in proper outfit   2. Keep low voice avoid disturbance to others   3. Public user(who is not a student) is required citizen ID card   4. Turn off or set all communication device silent or non-ringing   5. Food and drinks are not allowed   6. Smoking is prohibited   7. Taking a library material out of the premises without and official check out transaction is considered a punitive action   8. Allow staffs to check your belongings at the exit. To get into the library you need your student Id card(used instead of a library card). if you didn't bring you student id card you can fill in your name and faculty in the book that is provided on the table before you enter the library. To reserve(check out) a book you need to either show your student id card or if you forgot it you can show a picture of your student id card at the counter where there will be the library staff helping you. There are computers in the library where you can also search for the books you want by typing in the name of the book, author or genre. The library also give access to e-books and audiobooks, you can download them either on the computer in the library or on the library's website. To access the library website: you can enter this link (library.rsu.ac.th) on google and to log into the website the user name is your Student ID and the password is 1234. The borrowing period and fines are as follows: For Undergraduate students and staff they can borrow up to 5 books at a time and the borrowing period for each book is 7 days while for master's degree students they can borrow up to 10 books at a time and the period for each book is 30 days. You can extend the period up to extra 21 days on the library website. if you didn't return the book when the borrowing period is up you will be fined 10 baht for each day. There is no particular library wifi but you can access the RSU Server by logging into your own Wifi with your Student ID and passport number. The RSU Library offer varities of topics including academic journey and scholarly articles. If you have topic of your own, you can check it at the Library Website. You can donate your own books to Rangsit University. To donate with creditential, you have to give your student ID and your major at the RSU Library Administrator along with the title of the books that you are donating. The library does not have separate way for patrons with disabilities. The existing library system can be helpful for not only partons with disabilities but also for those who wish to used library system online. You can ask the library administrator at Floor 3rd and 5th for your things and they can check the security camera as well as store your belongings that you left . Currently, there aren't any system for leaving a review or feedback for our library system, on one hand, doesn't also have any room for suggestions but you can check it with library administrator.  The library supports academic integrity. We offer resources, citation guides, and librarian assistance to help students understand and avoid plagiarism. There are restrictions on food and drink in the library. To maintain a clean and quiet study environment, only bottled water is allowed. Stay informed about library closures or special events by clicking our RSU library’s website. Sorry, the library doesn’t offer assistance with technology, such as setting up your laptop or using software. You can access historical archives and special collections in the library. These materials are typically available for research purposes, and access may be granted by contacting at the information desk. Seat reservations during peak times are not available. Seating is on a first-come, first-served basis. We encourage you to plan your visit accordingly and arrive early to secure a seat. If you have specific concerns, please contact the library staff for assistance. Thank you for your understanding. The library provides language learning resources to support your academic journey. However, we do not currently host language practice groups. Explore our language learning materials and resources available in the library to enhance your language skills. You cannot request materials from other campuses or affiliated libraries. The library provides assistance with research projects and literature reviews. Our knowledgeable librarians can offer guidance on navigating resources, conducting effective searches, and accessing relevant materials. Feel free to reach out to the library staff for personalized support with your academic endeavors. If the question from the user does not relate to the rangsit university library please give this answer(Please ask questions related to the Rangsit University library). Do not give an answer for html code. ",
+                },
+                {
+                    role: "model",
+                    parts: "The location of Rangsit University is in Thailand.",
+                },
+                {
+                    role: "user",
+                    parts: "The information unrelated to RSU Library is not provided.",
+                },
+                {
+                    role: "model",
+                    parts: "The information unrelated to RSU Library is not provided.",
+                },
+                 
+            ] });
+
+            
+            
+
+            userInput.addEventListener("keypress", async function(e) {
+                if (e.key === "Enter") {
+                    const userMessage = this.value;
+                    addMessage('user', userMessage);
+                    this.value = "";
+
+                    const result = await chat.sendMessage(userMessage);
+                    const response = await result.response;
+                    const text = await response.text();
+                    
+                    addMessage("answer", text);
+                }
+            });
+        }
+
+        function addMessage(sender, message) {
+            const messageElement = document.createElement("div");
+            messageElement.classList.add("message");
+
+            const icon = document.createElement("i");
+            icon.classList.add("fas");
+            if (sender === 'user') {
+                icon.classList.add("fa-user", "user-icon");
+            } else {
+                icon.classList.add("fa-comment", "answer-icon");
+            }
+
+            messageElement.appendChild(icon);
+            const messageText = document.createElement("span");
+            messageText.textContent = message;
+            messageElement.appendChild(messageText);
+
+            chatContainer.appendChild(messageElement);
+        }
+
+        initChat();
+    </script>
+</body>
+</html>
